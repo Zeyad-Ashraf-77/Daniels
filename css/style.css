@@ -1,0 +1,423 @@
+/* start general style */
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+.contianer {
+  margin: auto;
+  width: 75%;
+}
+
+header span::after {
+  content: "";
+  width: 100%;
+  height: 30px;
+  background-image: url(../image/dots.png);
+  position: absolute;
+  top: 60%;
+  left: 0;
+  z-index: -1;
+}
+.px-6 {
+  padding: 9px 30px !important;
+}
+
+.out-none:hover {
+  background-color: white !important;
+  color: black;
+  transition: 0.5s all;
+}
+
+.transetion {
+  transition: 0.5s all;
+}
+
+.font-fm {
+  font-family: "Poppins", sans-serif;
+}
+h3 {
+  color: #343434;
+  font-weight: 900 !important;
+}
+
+.f-w {
+  font-weight: 900;
+}
+.h-z {
+  height: 25px;
+}
+/* end general style */
+
+/* start navbar */
+
+body:has([href="#home"].nav-link.active) nav.bg-body-tertiary {
+  background-color: transparent !important;
+  color: #fff !important;
+  position: absolute;
+}
+body:not(:has([href="#home"].nav-link.active)) nav {
+  animation: nav-animation 1s forwards;
+}
+body:has([href="#home"].nav-link.active) nav.bg-body-tertiary a {
+  color: #fff;
+}
+@keyframes nav-animation {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.navbar-nav .nav-link span {
+  position: relative;
+}
+
+nav #sp::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff !important;
+  transition: 0.5s width;
+}
+
+nav span::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000 !important;
+  transition: 0.5s width;
+}
+.navbar-nav .nav-link.active span::after {
+  width: 100%;
+}
+
+.collapse,
+.collapsing {
+  transition: 0.5s height;
+}
+@media screen and (max-width: 992px) {
+  .collapse,
+  .collapsing {
+    background-color: #fff;
+    transition: 0.5s all;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: 50vh;
+    width: 100%;
+    display: block;
+    padding: 30px;
+    text-align: center;
+  }
+  .collapse ul,
+  .collapsing ul {
+    /* background-color: #000; */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-90px);
+    padding: 30px;
+    border-radius: 30px;
+  }
+  .navbar-nav .nav-link,
+  .navbar-nav .nav-link.show {
+    color: #000 !important;
+  }
+  nav span::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000000 !important;
+    transition: 0.5s width;
+  }
+}
+/* end navbar */
+
+/* start section home */
+
+#home {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../image/home.jpg) center/ cover;
+}
+#home .bg-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+/* end section home */
+/* start section about */
+
+#about .dots {
+  background-image: url(../image/dots.png);
+}
+
+/* end section about */
+
+/* start section services */
+
+#services {
+  background-color: #f7f7f7;
+}
+.icon-serv {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  transition: 0.5s all;
+}
+
+.inner:hover .icon-serv {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+#services h6 {
+  font-weight: 900 !important;
+}
+
+/* end section services */
+
+/* start section portfolio */
+
+.item-img .over {
+  position: absolute;
+  top: 20px;
+  bottom: 5px;
+  right: 5px;
+  left: 5px;
+  background-color: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  transition: all.3s ease-in-out;
+}
+
+.item-img .over .ico-img i {
+  font-size: 14px;
+}
+
+.item-img .over .ico-img {
+  width: 28px;
+  height: 28px;
+  background-color: rgb(0, 0, 0);
+  color: #eee;
+  margin-inline: 3px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.item-img .over .cap {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  transition: all 0.3s;
+}
+
+.item-img:hover .cap {
+  margin-bottom: 10px;
+}
+
+.item-img .over .ico-img:hover {
+  background-color: transparent;
+  color: #131313;
+  border: 1px solid black;
+}
+
+.item-img :hover.over {
+  opacity: 1;
+  top: 5px;
+}
+
+#portfolio .nav-link {
+  color: #000;
+  font-weight: 700;
+  position: relative;
+}
+
+#portfolio .nav-link span {
+  position: relative;
+}
+
+#portfolio .nav-link span::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  top: 110%;
+  left: 0;
+  background-color: black;
+  transition: 0.5s width;
+}
+
+#portfolio .nav-link.active span::after {
+  width: 100%;
+}
+@keyframes mov--icon {
+  from {
+    transform: translateY(1600px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes mov--span {
+  from {
+    transform: translateY(-1600px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+#portfolio .col-lg-4 {
+  transform: scale(0);
+  animation: 1s card--scale forwards;
+  transform-origin: top;
+}
+
+@keyframes card--scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* end section portfolio */
+/* start section clients */
+
+#clients {
+  background-color: #f7f7f7;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+}
+/* end section clients */
+/* start section counter */
+
+#counter p {
+  color: #748182;
+  font-weight: 700;
+}
+
+#counter i {
+  font-size: 30px;
+  color: #343434;
+}
+#counter h5 {
+  color: #343434;
+}
+/* end section counter */
+/* start section team */
+
+#team .card .img-card {
+  position: relative;
+  overflow: hidden;
+}
+
+#team .card .img-card img {
+  transition: all.5s;
+}
+
+#team .card .img-card .layeer {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  background-color: #ffffffe5;
+  transform: rotateY(180deg) scale(0.5, 0.5);
+  opacity: 0;
+  transition: all.5s;
+}
+
+#team .card .img-card:hover img {
+  transform: scale(1.3);
+}
+
+#team .card:hover .layeer {
+  opacity: 1;
+  transform: rotateY(360deg) scale(1, 1);
+}
+
+#team .icon-card {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #131313;
+  color: white;
+}
+
+#team .layeer .icon-card:hover {
+  background-color: #ffffff;
+  color: rgb(20, 20, 20);
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#team .card-body {
+  background-color: #5b5b5b;
+}
+
+#team .card-body h4 {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+#team .card-body h5 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+/* end section team */
+/* start section contact */
+
+#contact .icon-contact {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  transition: 0.5s all;
+}
+
+#contact .contactt:hover .icon-contact {
+  background-color: #000;
+  color: #fff;
+}
+
+.form-control {
+  background-color: #f7f7f7;
+}
+
+.form-control:focus {
+  color: #f7f7f7;
+  background-color: #f7f7f7;
+  border-color: #f7f7f7;
+  outline: 0;
+  box-shadow: none;
+}
+
+/* end section contact */
+/* start footer */
+
+footer {
+  background-color: #1c1c1c;
+}
+/* end footer */
